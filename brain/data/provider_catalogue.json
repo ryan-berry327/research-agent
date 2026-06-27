@@ -1,0 +1,6 @@
+{
+  "external_providers": [
+    {"name": "Office for National Statistics", "type": "structured", "coverage": "economic and population statistics"},
+    {"name": "Open web search", "type": "web", "coverage": "current events and latest trends"}
+  ]
+}

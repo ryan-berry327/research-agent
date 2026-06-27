@@ -1,0 +1,28 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test-and-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Run tests
+        run: python -m pytest -q
+
+      # The eval gate runs fully offline (StubLLM) and fails the build on any
+      # routing / grounding / abstention regression. This is the key control:
+      # quality is enforced in CI, not just asserted in a README.
+      - name: Evaluation quality gate
+        run: python -m src.run_eval

@@ -1,0 +1,6 @@
+Semantic Layer Brief
+
+A semantic layer lets an AI system match any question to the most relevant data across a varied estate.
+The estate spans internal documents, structured statistical sources, and the open web.
+Routing each sub-question to the right source improves answer quality and reduces irrelevant retrieval.
+Departments are increasingly adopting large language models for drafting, triage, and interrogating large evidence bases.
